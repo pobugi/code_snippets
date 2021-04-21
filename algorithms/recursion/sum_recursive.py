@@ -9,7 +9,6 @@ print(sum_list([1,2,3,4,5]))
 
 
 def len_list(lst):
-    res = 0
     if len(lst) == 1:
         return 1
 

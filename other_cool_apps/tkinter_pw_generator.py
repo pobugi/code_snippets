@@ -21,7 +21,6 @@ alpha_check = tk.IntVar()
 digits_check = tk.IntVar()
 special_check = tk.IntVar()
 length = tk.IntVar()
-# alpha.set(0)
 
 def generate_password(*args):
 
@@ -64,7 +63,6 @@ submit = ttk.Entry(main_frame, width=10, textvariable=length)
 
 password_label = ttk.Label(main_frame, text='Your password:')
 password_display_label = ttk.Label(main_frame, textvariable=password_value)
-
 
 
 generate_button = ttk.Button(main_frame, text='Generate', command=generate_password)

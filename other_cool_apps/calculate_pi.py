@@ -8,7 +8,6 @@ from random import random
 def estimate_pi(iters):
 
     circ = 0
-    square = 0
 
     for i in range(iters):
         x, y = (random(), random())
@@ -17,11 +16,11 @@ def estimate_pi(iters):
 
         if r <= 1:
             circ += 1
-        
 
     pi = 4 * circ / iters
 
     return 'PI = {}'.format(pi)
+
 
 # print(estimate_pi(10000))     # 3.1556
 # print(estimate_pi(100000))    # 3.13252

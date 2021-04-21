@@ -1,13 +1,11 @@
-from random import randint
-
 def binary_search(l: list, n: int, start: int, stop: int) -> int:
-    '''
+    """
     :param l: list of items (must be sorted in ascending order)
     :param n: number to search in list
     :param start: start index
-    :param end: end index
+    :param stop: end index
     :return: index of n in list
-    '''
+    """
     if start > stop:
         return False
     else:

@@ -1,5 +1,6 @@
 """Slow recursive solution"""
 
+
 def fib1(n):
     assert n >= 0
     if n == 0:
@@ -13,6 +14,7 @@ def fib1(n):
 
 """More fast solution using an array"""
 
+
 def fib2(n):
     assert n >= 0
     arr = [0, 1]
@@ -22,20 +24,26 @@ def fib2(n):
 
 # print(fib2(10))
 
+
 """вывод k+1 последних цифр числа Фибоначчи"""
-def fib_digit(n, ord):
+
+
+def fib_digit(n, ordr):
     assert n >= 0
     l = [0 , 1]
-    k = 10 ** (ord + 1)
+    k = 10 ** (ordr + 1)
     for i in range(1, n):
-        next = l[i] % k + l[i-1] % k
-        l.append(next)
+        nxt = l[i] % k + l[i-1] % k
+        l.append(nxt)
     return l[-1] % k
 
 # print(fib_digit(200, 10))
 
+
 """recursive + cache"""
 cache = {}
+
+
 def fib3(n):
     assert n >= 0, 'n must be >= 0!'
     if n not in cache:
@@ -45,12 +53,12 @@ def fib3(n):
 # print(fib3(3))
 # print(cache)
 
+
 """recursive + decorator lru_cache"""
 
 
-
-
 """iteration"""
+
 
 def fib4(n):
     assert n >= 0
@@ -58,5 +66,6 @@ def fib4(n):
     for i in range(n - 1):
         f0, f1 = f1, f1 + f0
     return f1
+
 
 print(fib4(10))

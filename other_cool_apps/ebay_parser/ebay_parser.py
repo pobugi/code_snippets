@@ -14,6 +14,7 @@ def get_html(link):
         return 'Connection refused'
     return result.text
 
+
 def get_data(html):
 
     try:
@@ -35,7 +36,8 @@ def get_data(html):
             res.append([title, price, link])
         return res
     except:
-        return ['','','']
+        return ['', '', '']
+
 
 def get_total_pages(html):
 
@@ -43,6 +45,7 @@ def get_total_pages(html):
 
     pages = soup.find('ol', class_='pagination__items').find_all('a', class_='pagination__item')
     return [int(page.text) for page in pages]
+
 
 page_content = get_html(link)
 all_pages = get_total_pages(page_content)
@@ -58,7 +61,6 @@ for page in all_pages:
     for record in result:
         outcome.append(record)
 
-# print(outcome)
 print(len(outcome))
 
 
@@ -70,10 +72,3 @@ with open('result.csv', 'a') as file:
             record[1],
             record[2])  
         )
-
-
-
-
-
-
-
