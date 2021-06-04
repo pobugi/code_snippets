@@ -75,11 +75,14 @@ def spell_number(n):
     appnd = 'and ' if 100 < units < 1000 else ''
     result += spell_100_999(units)
 
-    return result
+    return ' '.join(str(i) for i in result.split()) 
 
 
-for i in range(1, 10000):
-    print(spell_number(i))
+
+print(spell_number(50001))
+print(spell_number(0))
+print(spell_number(55153))
+print(spell_number(1))
 
 
 
